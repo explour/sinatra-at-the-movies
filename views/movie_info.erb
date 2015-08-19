@@ -1,0 +1,13 @@
+<% movie = Movie.find(@movie_id) %>
+<p><%= movie.title %></p>
+<p><%= movie.director %></p>
+<p><%= movie.rating %></p>
+
+<form action = "/movies/<%= @movie_id %>/edit">
+<input type = "submit" value = "Edit" />
+</form>
+
+<form action = "/movies/<%= @movie_id %>" method = "POST">
+	<input type = "hidden" name = "_method" value = "DELETE"/>
+	<input type = "submit" value = "Delete" />
+</form>

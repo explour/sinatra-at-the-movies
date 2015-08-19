@@ -1,0 +1,7 @@
+<a name = "Create" href = "/movies/new" >Create a new movie</a>
+
+<% Movie.all.each do |movie| %>
+	<p><a href = "/movies/<%= movie.id.to_s%>"><%= movie.title.to_s %></a></p>
+	<p>Directed by <%= movie.director.to_s %>
+	<p>Rating: <%= movie.rating.to_s %> stars</p>
+<% end %>
