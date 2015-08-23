@@ -1,16 +1,32 @@
 <% movie = Movie.find(@movie_id) %>
 
-<h1>Edit your movie!</h1>
+<div id = "left_col">
+<h1>SINATRA AT THE MOVIES</h1>
+<a class = "button" href = "/movies" >Back to all movies</a>
+</div>
+
+<div id = "right_col">
+
 <form action = "/movies/<%=@movie_id%>" method = "POST">
-<input type = "hidden" name = "_method" value = "PUT">
-<p>Title: <input type = "text" name = "title" value = "<%=movie.title%>"></p>
-<p>Director: <input type = "text" name = "director" value = "<%=movie.director%>"></p>
-<p>Rating: <select name="rating">
-	<option value="1" <%= "selected" if movie.rating == "1" %>>1 star</option>
-	<option value="2" <%= "selected" if movie.rating == "2" %>>2 star</option>
-	<option value="3" <%= "selected" if movie.rating == "3" %>>3 star</option>
-	<option value="4" <%= "selected" if movie.rating == "4" %>>4 star</option>
-	<option value="5" <%= "selected" if movie.rating == "5" %>>5 star</option>
-</select>
-<p><input type = "submit" /></p>
+	<h1>Edit your movie:</h1>
+	<input type = "hidden" name = "_method" value = "PUT">
+
+	<label>Title:</label>
+	<input type = "text" name = "title" value = "<%=movie.title%>">
+
+	<label>Director:</label>
+	<input type = "text" name = "director" value = "<%=movie.director%>">
+
+
+	<label>Rating:</label>
+	<select name="rating">
+		<option value="1" <%= "selected" if movie.rating == "1" %>>1 star</option>
+		<option value="2" <%= "selected" if movie.rating == "2" %>>2 star</option>
+		<option value="3" <%= "selected" if movie.rating == "3" %>>3 star</option>
+		<option value="4" <%= "selected" if movie.rating == "4" %>>4 star</option>
+		<option value="5" <%= "selected" if movie.rating == "5" %>>5 star</option>
+	</select>
+
+	<button type = "submit">Submit</button>
 </form>
+</div>

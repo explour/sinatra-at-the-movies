@@ -1,13 +1,24 @@
+<div id = "left_col">
+<h1>SINATRA AT THE MOVIES</h1>
+<a class = "button" href = "/movies" >Back to all movies</a>
+</div>
+
+<div id = "right_col">
 <% movie = Movie.find(@movie_id) %>
-<p><%= movie.title %></p>
-<p><%= movie.director %></p>
-<p><%= movie.rating %></p>
+<img id = "full_img" href ="">
+
+<div id = "info_col">
+<h1><%= movie.title %></h1>
+<p>Directed by: <%= movie.director %></p>
+<p>Rating: <%= movie.rating %> stars</p>
 
 <form action = "/movies/<%= @movie_id %>/edit">
-<input type = "submit" value = "Edit" />
+	<button type = "submit">Edit</button>
 </form>
 
 <form action = "/movies/<%= @movie_id %>" method = "POST">
 	<input type = "hidden" name = "_method" value = "DELETE"/>
-	<input type = "submit" value = "Delete" />
+	<button type = "submit">Delete</button>
 </form>
+</div>
+</div>

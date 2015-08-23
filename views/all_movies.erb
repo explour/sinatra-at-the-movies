@@ -1,7 +1,19 @@
-<a name = "Create" href = "/movies/new" >Create a new movie</a>
+<div id = "left_col">
+<h1>SINATRA AT THE MOVIES</h1>
+<a class = "button" href = "/movies/new" >Create a new movie</a>
+</div>
 
+<div id = "right_col">
+<div class="grid js-masonry" data-masonry-options='{ "itemSelector": ".grid-item", "columWidth": 200 }'>
 <% Movie.all.each do |movie| %>
-	<p><a href = "/movies/<%= movie.id.to_s%>"><%= movie.title.to_s %></a></p>
-	<p>Directed by <%= movie.director.to_s %>
-	<p>Rating: <%= movie.rating.to_s %> stars</p>
+	<a href = "/movies/<%= movie.id.to_s%>">
+		<div class = "movie grid-item">
+		<img href ="" /><br />
+		<h2><%= movie.title.to_s %></h2>
+		<p>Directed by <%= movie.director.to_s %></p>
+		<p>Rating: <%= movie.rating.to_s %> stars</p>
+		</div>
+	</a>
 <% end %>
+</div>
+</div>
